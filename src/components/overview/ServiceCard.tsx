@@ -19,9 +19,9 @@ interface ServiceCardProps {
 
 /** Inset glow: the card clips its overflow, so an outer shadow would be cut off. */
 const CRITICAL_GLOW = [
-  'inset 0 0 0 2px rgba(255, 90, 60, 0.75), inset 0 0 36px rgba(255, 90, 60, 0.35)',
-  'inset 0 0 0 1px rgba(255, 90, 60, 0.25), inset 0 0 12px rgba(255, 90, 60, 0.05)',
-  'inset 0 0 0 2px rgba(255, 90, 60, 0.75), inset 0 0 36px rgba(255, 90, 60, 0.35)',
+  'inset 0 0 0 2px rgba(255, 61, 113, 0.75), inset 0 0 36px rgba(255, 61, 113, 0.35)',
+  'inset 0 0 0 1px rgba(255, 61, 113, 0.25), inset 0 0 12px rgba(255, 61, 113, 0.05)',
+  'inset 0 0 0 2px rgba(255, 61, 113, 0.75), inset 0 0 36px rgba(255, 61, 113, 0.35)',
 ];
 
 export function ServiceCard({ metrics, durations, requestsPerMinute, onOpenLogs }: ServiceCardProps) {
@@ -34,7 +34,7 @@ export function ServiceCard({ metrics, durations, requestsPerMinute, onOpenLogs 
       variants={fadeUp}
       whileHover={{ y: -4 }}
       className={`glass relative overflow-hidden rounded-3xl p-5 ${
-        critical ? 'border-coral-500/60! bg-coral-500/8! dark:bg-coral-500/10!' : ''
+        critical ? 'border-danger-500/60! bg-danger-500/8! dark:bg-danger-500/10!' : ''
       }`}
       aria-label={`${meta.label} service, ${health}`}
     >
@@ -49,7 +49,7 @@ export function ServiceCard({ metrics, durations, requestsPerMinute, onOpenLogs 
       )}
       <div
         className="pointer-events-none absolute -right-16 -top-16 size-44 rounded-full blur-3xl"
-        style={{ backgroundColor: critical ? '#ff5a3c' : meta.color, opacity: 0.18 }}
+        style={{ backgroundColor: critical ? '#ff3d71' : meta.color, opacity: 0.18 }}
         aria-hidden
       />
 
@@ -78,7 +78,7 @@ export function ServiceCard({ metrics, durations, requestsPerMinute, onOpenLogs 
         </div>
         <div>
           <dt className="text-muted text-[11px] font-semibold uppercase tracking-wider">Success</dt>
-          <dd className={`mt-1 font-display text-2xl font-extrabold tabular-nums ${critical ? 'text-coral-500' : 'text-emerald-500'}`}>
+          <dd className={`mt-1 font-display text-2xl font-extrabold tabular-nums ${critical ? 'text-danger-500' : 'text-emerald-500'}`}>
             <AnimatedNumber value={metrics.successRate} format={formatPercent} />
           </dd>
         </div>
@@ -90,17 +90,17 @@ export function ServiceCard({ metrics, durations, requestsPerMinute, onOpenLogs 
         </div>
       </dl>
 
-      <Sparkline values={durations} color={critical ? '#ff5a3c' : meta.color} className="relative mt-4 w-full" height={42} />
+      <Sparkline values={durations} color={critical ? '#ff3d71' : meta.color} className="relative mt-4 w-full" height={42} />
 
       <div className="relative mt-3">
         <div className="mb-1.5 flex justify-between text-xs">
           <span className="text-muted">
             {formatNumber(metrics.errorCount)} errors · {formatNumber(requestsPerMinute)} rpm
           </span>
-          <span className={`font-bold ${critical ? 'text-coral-500' : 'text-muted'}`}>{formatPercent(metrics.errorRate)} error</span>
+          <span className={`font-bold ${critical ? 'text-danger-500' : 'text-muted'}`}>{formatPercent(metrics.errorRate)} error</span>
         </div>
         <div
-          className="flex h-2 overflow-hidden rounded-full bg-stone-900/8 dark:bg-white/8"
+          className="flex h-2 overflow-hidden rounded-full bg-night-900/8 dark:bg-white/8"
           role="meter"
           aria-valuemin={0}
           aria-valuemax={100}
@@ -113,7 +113,7 @@ export function ServiceCard({ metrics, durations, requestsPerMinute, onOpenLogs 
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           />
           <motion.div
-            className="h-full bg-linear-to-r from-orange-500 to-coral-500"
+            className="h-full bg-linear-to-r from-pink-500 to-danger-500"
             animate={{ width: `${metrics.errorRate}%` }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           />
@@ -122,7 +122,7 @@ export function ServiceCard({ metrics, durations, requestsPerMinute, onOpenLogs 
 
       <div className="relative mt-4 flex items-center justify-between gap-2">
         {critical ? (
-          <p className="flex items-center gap-1.5 text-xs font-semibold text-coral-600 dark:text-coral-300">
+          <p className="flex items-center gap-1.5 text-xs font-semibold text-danger-600 dark:text-danger-300">
             <AlertTriangle className="size-3.5" aria-hidden />
             Error rate above {THRESHOLDS.criticalErrorRate}%
           </p>
@@ -132,7 +132,7 @@ export function ServiceCard({ metrics, durations, requestsPerMinute, onOpenLogs 
         <button
           type="button"
           onClick={onOpenLogs}
-          className="group inline-flex items-center gap-1 text-xs font-semibold text-amber-700 transition hover:text-coral-600 dark:text-amber-300 dark:hover:text-coral-300"
+          className="group inline-flex items-center gap-1 text-xs font-semibold text-brand-700 transition hover:text-danger-600 dark:text-brand-300 dark:hover:text-danger-300"
         >
           View logs
           <ArrowUpRight className="size-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden />

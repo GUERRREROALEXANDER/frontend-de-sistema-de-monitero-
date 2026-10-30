@@ -11,8 +11,8 @@ import type { Alert } from '../../types/monitoring';
 type AlertFilter = 'active' | 'all';
 
 const SEVERITY_STYLES = {
-  critical: { icon: Flame, color: '#ff5a3c', chip: 'bg-coral-500/15 text-coral-700 dark:text-coral-300' },
-  warning: { icon: AlertTriangle, color: '#f59e0b', chip: 'bg-amber-400/15 text-amber-700 dark:text-amber-300' },
+  critical: { icon: Flame, color: '#ff3d71', chip: 'bg-danger-500/15 text-danger-700 dark:text-danger-300' },
+  warning: { icon: AlertTriangle, color: '#fbbf24', chip: 'bg-amber-400/15 text-amber-700 dark:text-amber-300' },
 } as const;
 
 export function AlertsFeed({ alerts, className = '' }: { alerts: Alert[]; className?: string }) {
@@ -67,7 +67,7 @@ export function AlertsFeed({ alerts, className = '' }: { alerts: Alert[]; classN
                 animate={{ opacity: resolved ? 0.55 : 1, x: 0, scale: 1 }}
                 exit={{ opacity: 0, x: -24, scale: 0.97 }}
                 transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                className="flex gap-3 rounded-2xl bg-stone-900/3 p-3 ring-1 ring-inset ring-stone-900/5 dark:bg-white/3 dark:ring-white/5"
+                className="flex gap-3 rounded-2xl bg-night-900/3 p-3 ring-1 ring-inset ring-night-900/5 dark:bg-white/3 dark:ring-white/5"
               >
                 <span className={`grid size-9 shrink-0 place-items-center rounded-xl ${style.chip}`}>
                   <Icon className="size-4" aria-hidden />

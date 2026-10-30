@@ -148,20 +148,20 @@ export function TopologyMap({ topology, selectedId, onSelect }: TopologyMapProps
               width={NODE.width}
               height={NODE.height}
               rx={18}
-              className="fill-white/85 dark:fill-[#1c140d]/90"
+              className="fill-white/85 dark:fill-[#17122e]/90"
               stroke={style.color}
               strokeOpacity={selected ? 1 : 0.55}
               strokeWidth={selected ? 2.5 : 1.5}
               style={{ filter: selected ? `drop-shadow(0 0 12px ${style.color}88)` : undefined }}
             />
             <rect x={x + 12} y={pos.y - 17} width={34} height={34} rx={10} fill={style.color} fillOpacity={0.16} />
-            <g className="text-stone-700 dark:text-stone-200" style={{ color: style.color }}>
+            <g className="text-night-700 dark:text-night-200" style={{ color: style.color }}>
               <NodeIcon node={node} x={x + 19} y={pos.y - 10} />
             </g>
-            <text x={x + 56} y={pos.y - 4} className="fill-stone-900 font-display text-[14px] font-bold dark:fill-stone-100">
+            <text x={x + 56} y={pos.y - 4} className="fill-night-900 font-display text-[14px] font-bold dark:fill-night-100">
               {node.label}
             </text>
-            <text x={x + 56} y={pos.y + 14} className="fill-stone-500 text-[11px] dark:fill-stone-400">
+            <text x={x + 56} y={pos.y + 14} className="fill-night-500 text-[11px] dark:fill-night-400">
               {metric}
             </text>
             <circle cx={x + NODE.width - 14} cy={y + 14} r={4.5} fill={style.color} />

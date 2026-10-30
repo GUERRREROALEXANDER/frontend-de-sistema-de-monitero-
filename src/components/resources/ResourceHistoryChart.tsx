@@ -76,7 +76,7 @@ export function ResourceHistoryChart({ history, isDark }: { history: ResourceSna
                 width={44}
                 tickFormatter={(v: number) => `${v}%`}
               />
-              <ReferenceLine y={threshold} stroke="#ff5a3c" strokeDasharray="6 6" strokeOpacity={0.7} />
+              <ReferenceLine y={threshold} stroke="#ff3d71" strokeDasharray="6 6" strokeOpacity={0.7} />
               <Tooltip
                 cursor={{ stroke: theme.cursor }}
                 content={({ active, payload }) => {

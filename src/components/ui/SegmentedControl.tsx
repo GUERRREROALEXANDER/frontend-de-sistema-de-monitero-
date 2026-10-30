@@ -25,7 +25,7 @@ export function SegmentedControl<T extends string>({ options, value, onChange, l
     <div
       role="radiogroup"
       aria-label={label}
-      className={`inline-flex rounded-xl bg-stone-900/5 p-1 ring-1 ring-inset ring-stone-900/5 dark:bg-white/5 dark:ring-white/5 ${
+      className={`inline-flex rounded-xl bg-night-900/5 p-1 ring-1 ring-inset ring-night-900/5 dark:bg-white/5 dark:ring-white/5 ${
         size === 'sm' ? 'text-xs' : 'text-sm'
       }`}
     >
@@ -39,7 +39,7 @@ export function SegmentedControl<T extends string>({ options, value, onChange, l
             aria-checked={selected}
             onClick={() => onChange(opt.value)}
             className={`relative rounded-lg font-semibold transition-colors ${size === 'sm' ? 'px-2.5 py-1' : 'px-3 py-1.5'} ${
-              selected ? (opt.tone ?? 'text-stone-900 dark:text-white') : 'text-muted hover:text-stone-800 dark:hover:text-stone-200'
+              selected ? (opt.tone ?? 'text-night-900 dark:text-white') : 'text-muted hover:text-night-800 dark:hover:text-night-200'
             }`}
           >
             {selected && (

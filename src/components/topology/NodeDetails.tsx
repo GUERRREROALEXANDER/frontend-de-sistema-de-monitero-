@@ -28,7 +28,7 @@ function topOperations(logs: LogEntry[], service: ServiceId) {
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-2xl bg-stone-900/4 p-3 dark:bg-white/4">
+    <div className="rounded-2xl bg-night-900/4 p-3 dark:bg-white/4">
       <p className="text-muted text-[11px] font-semibold uppercase tracking-wider">{label}</p>
       <p className="mt-1 font-display text-lg font-bold tabular-nums">{value}</p>
     </div>
@@ -50,7 +50,7 @@ export function NodeDetails({ node, resources, recentLogs, onOpenLogs }: NodeDet
           exit={{ opacity: 0 }}
           className="text-muted flex h-full min-h-64 flex-col items-center justify-center gap-2 p-6 text-center text-sm"
         >
-          <MousePointerClick className="size-8 text-amber-500" aria-hidden />
+          <MousePointerClick className="size-8 text-brand-500" aria-hidden />
           Select a node in the map to inspect it.
         </motion.div>
       ) : (
@@ -72,7 +72,7 @@ export function NodeDetails({ node, resources, recentLogs, onOpenLogs }: NodeDet
           </div>
 
           {node.inferred && node.kind !== 'client' && (
-            <p className="flex gap-2 rounded-xl bg-amber-400/10 p-3 text-xs text-amber-800 dark:text-amber-200">
+            <p className="flex gap-2 rounded-xl bg-brand-400/10 p-3 text-xs text-brand-800 dark:text-brand-200">
               <Info className="mt-0.5 size-3.5 shrink-0" aria-hidden />
               Not measured directly: status is inferred from the traffic of the owning service.
             </p>
@@ -89,7 +89,7 @@ export function NodeDetails({ node, resources, recentLogs, onOpenLogs }: NodeDet
           {node.kind === 'client' && <Stat label="Requests per minute" value={formatNumber(node.rpm)} />}
 
           {usage && (
-            <div className="flex justify-around rounded-2xl bg-stone-900/4 py-4 dark:bg-white/4">
+            <div className="flex justify-around rounded-2xl bg-night-900/4 py-4 dark:bg-white/4">
               <RadialGauge value={usage.cpuPercent} label="CPU" warnAt={THRESHOLDS.cpuWarning - 15} criticalAt={THRESHOLDS.cpuWarning} size={96} />
               <RadialGauge
                 value={usage.memoryPercent}
@@ -110,12 +110,12 @@ export function NodeDetails({ node, resources, recentLogs, onOpenLogs }: NodeDet
                     <div className="mb-1 flex justify-between">
                       <span className="font-mono">{name}</span>
                       <span className="text-muted tabular-nums">
-                        {value.total} calls{value.errors > 0 && <span className="text-coral-500"> · {value.errors} err</span>}
+                        {value.total} calls{value.errors > 0 && <span className="text-danger-500"> · {value.errors} err</span>}
                       </span>
                     </div>
-                    <div className="h-1.5 overflow-hidden rounded-full bg-stone-900/8 dark:bg-white/8">
+                    <div className="h-1.5 overflow-hidden rounded-full bg-night-900/8 dark:bg-white/8">
                       <motion.div
-                        className="h-full rounded-full bg-linear-to-r from-amber-400 to-orange-500"
+                        className="h-full rounded-full bg-linear-to-r from-brand-400 to-pink-500"
                         initial={{ width: 0 }}
                         animate={{ width: `${(value.total / maxOps) * 100}%` }}
                         transition={{ duration: 0.6 }}
@@ -131,7 +131,7 @@ export function NodeDetails({ node, resources, recentLogs, onOpenLogs }: NodeDet
             <button
               type="button"
               onClick={() => onOpenLogs(node.service as ServiceId)}
-              className="group inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-amber-400/15 px-4 py-2.5 text-sm font-semibold text-amber-800 ring-1 ring-inset ring-amber-500/25 transition hover:bg-amber-400/25 dark:text-amber-200"
+              className="group inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-brand-400/15 px-4 py-2.5 text-sm font-semibold text-brand-800 ring-1 ring-inset ring-brand-500/25 transition hover:bg-brand-400/25 dark:text-brand-200"
             >
               {node.kind === 'database' ? 'Open service logs' : 'Open logs'}
               <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />

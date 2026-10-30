@@ -20,7 +20,7 @@ export function GlassCard({ title, subtitle, icon, actions, className = '', body
         <header className="flex flex-wrap items-start justify-between gap-3 px-5 pb-2 pt-5 sm:px-6">
           <div className="flex items-start gap-3">
             {icon && (
-              <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-amber-400/15 text-amber-600 dark:text-amber-300">
+              <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-brand-400/15 text-brand-600 dark:text-brand-300">
                 {icon}
               </span>
             )}

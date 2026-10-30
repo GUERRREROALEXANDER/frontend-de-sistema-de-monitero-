@@ -17,7 +17,7 @@ export function ResourceCards({ resources }: { resources: ResourceUsage[] }) {
             key={target.id}
             variants={fadeUp}
             whileHover={{ y: -4 }}
-            className={`glass rounded-3xl p-5 ${hot ? 'ring-1 ring-coral-500/50' : ''}`}
+            className={`glass rounded-3xl p-5 ${hot ? 'ring-1 ring-danger-500/50' : ''}`}
           >
             <div className="flex items-center gap-3">
               <span

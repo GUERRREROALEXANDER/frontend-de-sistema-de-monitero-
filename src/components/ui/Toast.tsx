@@ -36,13 +36,13 @@ export function Toast({ toast, onClose, durationMs = 4000 }: ToastProps) {
             {toast.kind === 'success' ? (
               <CheckCircle2 className="size-5 shrink-0 text-emerald-500" aria-hidden />
             ) : (
-              <XCircle className="size-5 shrink-0 text-coral-500" aria-hidden />
+              <XCircle className="size-5 shrink-0 text-danger-500" aria-hidden />
             )}
             <span>{toast.text}</span>
             <button
               type="button"
               onClick={onClose}
-              className="text-muted ml-2 rounded-md p-1 transition hover:bg-stone-900/5 dark:hover:bg-white/10"
+              className="text-muted ml-2 rounded-md p-1 transition hover:bg-night-900/5 dark:hover:bg-white/10"
               aria-label="Dismiss notification"
             >
               <X className="size-4" />

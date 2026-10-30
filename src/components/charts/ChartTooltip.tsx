@@ -21,11 +21,11 @@ export function ChartTooltipBox({ title, rows, footer }: { title: string; rows: 
             <span className="size-2.5 shrink-0 rounded-full" style={{ backgroundColor: row.color }} />
             <span className="font-semibold">{row.label}</span>
             {row.detail && <span className="text-muted truncate font-mono text-[11px]">{row.detail}</span>}
-            <span className={`ml-auto pl-3 font-bold tabular-nums ${row.danger ? 'text-coral-500' : ''}`}>{row.value}</span>
+            <span className={`ml-auto pl-3 font-bold tabular-nums ${row.danger ? 'text-danger-500' : ''}`}>{row.value}</span>
           </li>
         ))}
       </ul>
-      {footer && <div className="text-muted mt-2 border-t border-stone-900/5 pt-2 dark:border-white/5">{footer}</div>}
+      {footer && <div className="text-muted mt-2 border-t border-night-900/5 pt-2 dark:border-white/5">{footer}</div>}
     </div>
   );
 }

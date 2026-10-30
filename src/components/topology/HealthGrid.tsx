@@ -65,8 +65,8 @@ export function HealthGrid({ nodes, selectedId, onSelect }: HealthGridProps) {
                   whileHover={{ y: -2 }}
                   onClick={() => onSelect(node.id)}
                   aria-pressed={selected}
-                  className={`w-full rounded-2xl bg-stone-900/3 p-4 text-left ring-1 ring-inset transition dark:bg-white/3 ${
-                    selected ? 'ring-amber-500/60' : 'ring-stone-900/6 hover:ring-amber-500/30 dark:ring-white/6'
+                  className={`w-full rounded-2xl bg-night-900/3 p-4 text-left ring-1 ring-inset transition dark:bg-white/3 ${
+                    selected ? 'ring-brand-500/60' : 'ring-night-900/6 hover:ring-brand-500/30 dark:ring-white/6'
                   }`}
                 >
                   <div className="flex items-center justify-between gap-2">

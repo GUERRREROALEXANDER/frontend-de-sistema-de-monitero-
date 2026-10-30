@@ -11,7 +11,7 @@ interface LogsFiltersProps {
 }
 
 const fieldClass =
-  'h-9 w-full rounded-xl border-0 bg-stone-900/5 px-3 text-sm ring-1 ring-inset ring-stone-900/8 transition focus:outline-none focus:ring-2 focus:ring-amber-500/60 dark:bg-white/5 dark:ring-white/8 dark:[color-scheme:dark]';
+  'h-9 w-full rounded-xl border-0 bg-night-900/5 px-3 text-sm ring-1 ring-inset ring-night-900/8 transition focus:outline-none focus:ring-2 focus:ring-brand-500/60 dark:bg-white/5 dark:ring-white/8 dark:[color-scheme:dark]';
 
 const labelClass = 'text-muted mb-1 block text-[11px] font-semibold uppercase tracking-wider';
 
@@ -50,7 +50,7 @@ export function LogsFilters({ value, onChange }: LogsFiltersProps) {
           options={[
             { value: 'ALL', label: 'All' },
             { value: 'SUCCESS', label: 'Success', tone: 'text-emerald-600 dark:text-emerald-400' },
-            { value: 'ERROR', label: 'Error', tone: 'text-coral-600 dark:text-coral-400' },
+            { value: 'ERROR', label: 'Error', tone: 'text-danger-600 dark:text-danger-400' },
           ]}
         />
       </div>
@@ -76,7 +76,7 @@ export function LogsFilters({ value, onChange }: LogsFiltersProps) {
         <input
           id="filter-to"
           type="datetime-local"
-          className={`${fieldClass} ${rangeInvalid ? 'ring-2 ring-coral-500/70' : ''}`}
+          className={`${fieldClass} ${rangeInvalid ? 'ring-2 ring-danger-500/70' : ''}`}
           value={value.to}
           min={value.from || undefined}
           onChange={(e) => set('to', e.target.value)}
@@ -89,14 +89,14 @@ export function LogsFilters({ value, onChange }: LogsFiltersProps) {
         whileTap={{ scale: 0.95 }}
         onClick={() => onChange(DEFAULT_FILTERS)}
         disabled={!active}
-        className="inline-flex h-9 items-center justify-center gap-1.5 rounded-xl px-3 text-sm font-semibold text-amber-700 ring-1 ring-inset ring-amber-500/30 transition hover:bg-amber-400/10 disabled:cursor-not-allowed disabled:opacity-35 dark:text-amber-300"
+        className="inline-flex h-9 items-center justify-center gap-1.5 rounded-xl px-3 text-sm font-semibold text-brand-700 ring-1 ring-inset ring-brand-500/30 transition hover:bg-brand-400/10 disabled:cursor-not-allowed disabled:opacity-35 dark:text-brand-300"
       >
         <FilterX className="size-4" aria-hidden />
         Clear
       </motion.button>
 
       {rangeInvalid && (
-        <p className="text-xs font-semibold text-coral-600 sm:col-span-2 lg:col-span-5 dark:text-coral-400">
+        <p className="text-xs font-semibold text-danger-600 sm:col-span-2 lg:col-span-5 dark:text-danger-400">
           “From” must be earlier than “To”.
         </p>
       )}

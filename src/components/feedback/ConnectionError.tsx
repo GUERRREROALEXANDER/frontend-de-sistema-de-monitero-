@@ -39,7 +39,7 @@ export function ConnectionError({ message, onRetry, variant }: ConnectionErrorPr
       <motion.div
         animate={{ scale: [1, 1.08, 1] }}
         transition={{ duration: 1.8, repeat: Infinity }}
-        className="grid size-16 place-items-center rounded-3xl bg-coral-500/15 text-coral-500"
+        className="grid size-16 place-items-center rounded-3xl bg-danger-500/15 text-danger-500"
       >
         <WifiOff className="size-8" aria-hidden />
       </motion.div>
@@ -52,7 +52,7 @@ export function ConnectionError({ message, onRetry, variant }: ConnectionErrorPr
         type="button"
         whileTap={{ scale: 0.96 }}
         onClick={onRetry}
-        className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-amber-400 to-coral-500 px-4 py-2 text-sm font-bold text-white shadow-lg shadow-coral-500/30"
+        className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-brand-400 via-pink-500 to-violet-500 px-4 py-2 text-sm font-bold text-white shadow-lg shadow-pink-500/30"
       >
         <RefreshCw className="size-4" aria-hidden />
         Retry

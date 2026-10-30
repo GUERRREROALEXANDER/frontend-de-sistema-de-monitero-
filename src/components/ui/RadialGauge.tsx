@@ -17,13 +17,13 @@ export function RadialGauge({ value, label, warnAt, criticalAt = 95, size = 112,
   const radius = (size - STROKE) / 2;
   const circumference = 2 * Math.PI * radius;
   const clamped = Math.min(100, Math.max(0, value));
-  const color = clamped >= criticalAt ? '#ff5a3c' : clamped >= warnAt ? '#f59e0b' : '#10b981';
+  const color = clamped >= criticalAt ? '#ff3d71' : clamped >= warnAt ? '#fbbf24' : '#2ee6a6';
 
   return (
     <div className="flex flex-col items-center gap-1.5">
       <div className="relative" style={{ width: size, height: size }}>
         <svg width={size} height={size} className="-rotate-90" role="img" aria-label={`${label} ${clamped.toFixed(1)}%`}>
-          <circle cx={size / 2} cy={size / 2} r={radius} fill="none" strokeWidth={STROKE} className="stroke-stone-300/50 dark:stroke-white/8" />
+          <circle cx={size / 2} cy={size / 2} r={radius} fill="none" strokeWidth={STROKE} className="stroke-night-300/50 dark:stroke-white/8" />
           <motion.circle
             cx={size / 2}
             cy={size / 2}

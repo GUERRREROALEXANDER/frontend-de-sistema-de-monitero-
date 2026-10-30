@@ -36,7 +36,7 @@ function Kpi({ icon, label, value, format, hint, accent, trend, danger = false }
       variants={fadeUp}
       whileHover={{ y: -3 }}
       transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-      className={`glass relative overflow-hidden rounded-3xl p-5 ${danger ? 'ring-1 ring-coral-500/50' : ''}`}
+      className={`glass relative overflow-hidden rounded-3xl p-5 ${danger ? 'ring-1 ring-danger-500/50' : ''}`}
     >
       <div className="flex items-center justify-between">
         <span className="text-muted text-xs font-semibold uppercase tracking-wider">{label}</span>
@@ -47,7 +47,7 @@ function Kpi({ icon, label, value, format, hint, accent, trend, danger = false }
       <AnimatedNumber
         value={value}
         format={format}
-        className={`mt-3 block font-display text-3xl font-extrabold tabular-nums tracking-tight ${danger ? 'text-coral-500' : ''}`}
+        className={`mt-3 block font-display text-3xl font-extrabold tabular-nums tracking-tight ${danger ? 'text-danger-500' : ''}`}
       />
       <p className="text-muted mt-1 text-xs">{hint}</p>
       {trend && <Sparkline values={trend} color={accent} className="-mx-5 -mb-5 mt-3 w-[calc(100%+2.5rem)]" height={34} />}
@@ -78,7 +78,7 @@ export function KpiStrip({ metrics, recentLogs, throughputTrend, latencyTrend, n
         value={totals.totalCalls}
         format={formatNumber}
         hint={`${formatNumber(totals.errorCount)} failed across all services`}
-        accent="#fbbf24"
+        accent="#ff8a3d"
       />
       <Kpi
         icon={<CheckCircle2 className="size-4" />}
@@ -86,7 +86,7 @@ export function KpiStrip({ metrics, recentLogs, throughputTrend, latencyTrend, n
         value={totals.successRate}
         format={formatPercent}
         hint={`Error rate ${formatPercent(totals.errorRate)}`}
-        accent={totals.errorRate > THRESHOLDS.criticalErrorRate ? '#ff5a3c' : '#10b981'}
+        accent={totals.errorRate > THRESHOLDS.criticalErrorRate ? '#ff3d71' : '#2ee6a6'}
         danger={totals.errorRate > THRESHOLDS.criticalErrorRate}
       />
       <Kpi
@@ -95,7 +95,7 @@ export function KpiStrip({ metrics, recentLogs, throughputTrend, latencyTrend, n
         value={totals.avgResponseTimeMs}
         format={formatMs}
         hint={`p95 ${formatMs(p95)} over the last ${recentLogs.length} calls`}
-        accent="#fb923c"
+        accent="#a78bfa"
         trend={latencyTrend}
       />
       <Kpi
@@ -104,7 +104,7 @@ export function KpiStrip({ metrics, recentLogs, throughputTrend, latencyTrend, n
         value={rpm}
         format={(v) => `${formatNumber(v)} rpm`}
         hint="Requests in the last minute"
-        accent="#f472b6"
+        accent="#22d3ee"
         trend={throughputTrend}
       />
     </div>

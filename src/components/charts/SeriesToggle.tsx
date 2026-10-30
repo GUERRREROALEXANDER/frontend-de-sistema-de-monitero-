@@ -26,7 +26,7 @@ export function SeriesToggle({ series, hidden, onToggle }: SeriesToggleProps) {
             onClick={() => onToggle(s.id)}
             aria-pressed={!off}
             className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ring-inset transition ${
-              off ? 'text-muted ring-stone-900/10 line-through opacity-60 dark:ring-white/10' : 'ring-stone-900/10 dark:ring-white/10'
+              off ? 'text-muted ring-night-900/10 line-through opacity-60 dark:ring-white/10' : 'ring-night-900/10 dark:ring-white/10'
             }`}
           >
             <span

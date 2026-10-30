@@ -25,7 +25,7 @@ interface DotProps {
   payload?: ChartRow;
 }
 
-/** Series point: larger and coral when the call ended in ERROR. */
+/** Series point: larger and red when the call ended in ERROR. */
 function makeDot(service: ServiceId, color: string, surface: string) {
   return function ServiceDot(props: unknown) {
     const { cx, cy, index, payload } = props as DotProps;
@@ -38,7 +38,7 @@ function makeDot(service: ServiceId, color: string, surface: string) {
         cx={cx}
         cy={cy}
         r={isError ? 5.5 : 3}
-        fill={isError ? '#ff5a3c' : color}
+        fill={isError ? '#ff3d71' : color}
         stroke={surface}
         strokeWidth={isError ? 2 : 1}
       />
@@ -55,7 +55,7 @@ export function ResponseTimeChart({ logs, loading, isDark }: ResponseTimeChartPr
     <GlassCard
       icon={<Timer className="size-4.5" />}
       title="Response time per call"
-      subtitle={`Last ${CHART_WINDOW} calls per service · coral points are errors`}
+      subtitle={`Last ${CHART_WINDOW} calls per service · red points are errors`}
       actions={<SeriesToggle series={SERVICES} hidden={hidden} onToggle={(id) => setHidden((h) => toggleInSet(h, id))} />}
     >
       <div className="h-72 px-2 pb-4 sm:px-4">

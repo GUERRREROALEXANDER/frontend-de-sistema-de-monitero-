@@ -41,7 +41,7 @@ export function LogsTable({ logs, loading }: LogsTableProps) {
   if (logs.length === 0) {
     return (
       <div className="text-muted flex flex-col items-center gap-2 px-5 py-16 text-center text-sm">
-        <Inbox className="size-8 text-amber-500/60" aria-hidden />
+        <Inbox className="size-8 text-brand-500/60" aria-hidden />
         No records match the current filters.
       </div>
     );
@@ -51,7 +51,7 @@ export function LogsTable({ logs, loading }: LogsTableProps) {
     <>
       <div className="overflow-x-auto">
         <table className="w-full min-w-[780px] text-left text-sm">
-          <thead className="text-muted border-y border-stone-900/5 bg-stone-900/[0.02] text-[11px] uppercase tracking-wider dark:border-white/5 dark:bg-white/[0.02]">
+          <thead className="text-muted border-y border-night-900/5 bg-night-900/[0.02] text-[11px] uppercase tracking-wider dark:border-white/5 dark:bg-white/[0.02]">
             <tr>
               {COLUMNS.map((c, i) => (
                 <th key={c || i} scope="col" className={`px-4 py-3 font-semibold ${c === 'Duration' ? 'text-right' : ''}`}>
@@ -60,7 +60,7 @@ export function LogsTable({ logs, loading }: LogsTableProps) {
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-stone-900/5 dark:divide-white/5">
+          <tbody className="divide-y divide-night-900/5 dark:divide-white/5">
             <AnimatePresence initial={false}>
               {visible.map((log) => {
                 const expanded = expandedId === log.requestId;
@@ -84,9 +84,9 @@ export function LogsTable({ logs, loading }: LogsTableProps) {
                       }}
                       tabIndex={0}
                       aria-expanded={expanded}
-                      className={`cursor-pointer border-l-2 transition-colors hover:bg-amber-400/[0.06]! focus-visible:bg-amber-400/[0.06]! ${
-                        expanded ? 'bg-amber-400/[0.08]!' : ''
-                      } ${error ? 'border-l-coral-500' : 'border-l-transparent'}`}
+                      className={`cursor-pointer border-l-2 transition-colors hover:bg-brand-400/[0.06]! focus-visible:bg-brand-400/[0.06]! ${
+                        expanded ? 'bg-brand-400/[0.08]!' : ''
+                      } ${error ? 'border-l-danger-500' : 'border-l-transparent'}`}
                     >
                       <td className="text-muted w-10 px-4 py-3">
                         <motion.span className="inline-flex" animate={{ rotate: expanded ? 180 : 0 }} transition={{ duration: 0.2 }}>
@@ -132,7 +132,7 @@ export function LogsTable({ logs, loading }: LogsTableProps) {
         </table>
       </div>
 
-      <footer className="text-muted flex flex-wrap items-center justify-between gap-3 border-t border-stone-900/5 px-5 py-3 text-xs sm:px-6 dark:border-white/5">
+      <footer className="text-muted flex flex-wrap items-center justify-between gap-3 border-t border-night-900/5 px-5 py-3 text-xs sm:px-6 dark:border-white/5">
         <span>
           Showing {formatNumber(page * PAGE_SIZE + 1)}–{formatNumber(page * PAGE_SIZE + visible.length)} of {formatNumber(logs.length)} records
         </span>
@@ -141,7 +141,7 @@ export function LogsTable({ logs, loading }: LogsTableProps) {
             type="button"
             onClick={() => setPage(page - 1)}
             disabled={page === 0}
-            className="grid size-8 place-items-center rounded-lg ring-1 ring-inset ring-stone-900/10 transition hover:bg-amber-400/10 disabled:opacity-35 dark:ring-white/10"
+            className="grid size-8 place-items-center rounded-lg ring-1 ring-inset ring-night-900/10 transition hover:bg-brand-400/10 disabled:opacity-35 dark:ring-white/10"
             aria-label="Previous page"
           >
             <ChevronLeft className="size-4" />
@@ -153,7 +153,7 @@ export function LogsTable({ logs, loading }: LogsTableProps) {
             type="button"
             onClick={() => setPage(page + 1)}
             disabled={page >= pageCount - 1}
-            className="grid size-8 place-items-center rounded-lg ring-1 ring-inset ring-stone-900/10 transition hover:bg-amber-400/10 disabled:opacity-35 dark:ring-white/10"
+            className="grid size-8 place-items-center rounded-lg ring-1 ring-inset ring-night-900/10 transition hover:bg-brand-400/10 disabled:opacity-35 dark:ring-white/10"
             aria-label="Next page"
           >
             <ChevronRight className="size-4" />

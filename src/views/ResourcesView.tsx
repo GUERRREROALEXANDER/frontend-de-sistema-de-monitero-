@@ -34,7 +34,7 @@ export function ResourcesView({ resources, history, loading, isDark }: Resources
           <div className="text-muted space-y-2 px-6 pb-6 text-sm">
             <p>The backend does not expose CPU and memory metrics yet.</p>
             <p>
-              Implement <code className="rounded bg-amber-400/15 px-1.5 py-0.5 font-mono text-xs">GET {ENDPOINTS.resources}</code> returning a
+              Implement <code className="rounded bg-brand-400/15 px-1.5 py-0.5 font-mono text-xs">GET {ENDPOINTS.resources}</code> returning a
               list such as <code className="font-mono text-xs">{'[{ "service": "payments", "cpuPercent": 42, "memoryPercent": 61 }]'}</code>{' '}
               and this view will light up automatically.
             </p>

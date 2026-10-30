@@ -17,7 +17,7 @@ function AlertCount({ count }: { count: number }) {
       initial={{ scale: 0.6 }}
       animate={{ scale: 1 }}
       transition={spring}
-      className="grid min-w-5 place-items-center rounded-full bg-coral-500 px-1.5 text-[10px] font-bold text-white shadow-md shadow-coral-500/40"
+      className="grid min-w-5 place-items-center rounded-full bg-danger-500 px-1.5 text-[10px] font-bold text-white shadow-md shadow-danger-500/40"
     >
       {count}
     </motion.span>
@@ -30,7 +30,7 @@ export function Sidebar({ active, onNavigate, activeAlerts }: SidebarProps) {
       {/* Desktop */}
       <aside className="glass-strong fixed inset-y-3 left-3 z-40 hidden w-60 flex-col rounded-3xl p-4 lg:flex">
         <div className="flex items-center gap-3 px-2 pb-6 pt-1">
-          <div className="grid size-10 place-items-center rounded-2xl bg-linear-to-br from-amber-400 to-coral-500 text-white shadow-lg shadow-coral-500/30">
+          <div className="grid size-10 place-items-center rounded-2xl bg-linear-to-br from-brand-400 via-pink-500 to-violet-500 text-white shadow-lg shadow-pink-500/30">
             <Activity className="size-5" aria-hidden />
           </div>
           <div>
@@ -50,17 +50,17 @@ export function Sidebar({ active, onNavigate, activeAlerts }: SidebarProps) {
                 onClick={() => onNavigate(item.id)}
                 aria-current={selected ? 'page' : undefined}
                 className={`group relative flex items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-semibold transition-colors ${
-                  selected ? 'text-stone-900 dark:text-white' : 'text-muted hover:text-stone-900 dark:hover:text-stone-100'
+                  selected ? 'text-night-900 dark:text-white' : 'text-muted hover:text-night-900 dark:hover:text-night-100'
                 }`}
               >
                 {selected && (
                   <motion.span
                     layoutId="sidebar-active"
                     transition={spring}
-                    className="absolute inset-0 rounded-2xl bg-linear-to-r from-amber-400/25 to-coral-500/10 ring-1 ring-inset ring-amber-500/25"
+                    className="absolute inset-0 rounded-2xl bg-linear-to-r from-brand-400/20 via-pink-500/15 to-violet-500/15 ring-1 ring-inset ring-pink-400/30"
                   />
                 )}
-                <Icon className={`relative size-4.5 transition-transform group-hover:scale-110 ${selected ? 'text-amber-500' : ''}`} />
+                <Icon className={`relative size-4.5 transition-transform group-hover:scale-110 ${selected ? 'text-pink-500 dark:text-pink-400' : ''}`} />
                 <span className="relative flex-1 text-left">{item.label}</span>
                 {item.id === 'overview' && (
                   <span className="relative">
@@ -72,8 +72,8 @@ export function Sidebar({ active, onNavigate, activeAlerts }: SidebarProps) {
           })}
         </nav>
 
-        <div className="mt-auto rounded-2xl bg-linear-to-br from-amber-400/15 to-coral-500/10 p-4 text-xs ring-1 ring-inset ring-amber-500/15">
-          <p className="font-semibold text-amber-700 dark:text-amber-300">Proxy pattern</p>
+        <div className="mt-auto rounded-2xl bg-linear-to-br from-brand-400/15 via-pink-500/10 to-violet-500/15 p-4 text-xs ring-1 ring-inset ring-brand-500/15">
+          <p className="font-semibold text-brand-700 dark:text-brand-300">Proxy pattern</p>
           <p className="text-muted mt-1 leading-relaxed">Every call to Inventory, Orders and Payments is intercepted and measured.</p>
         </div>
       </aside>
@@ -93,16 +93,16 @@ export function Sidebar({ active, onNavigate, activeAlerts }: SidebarProps) {
               onClick={() => onNavigate(item.id)}
               aria-current={selected ? 'page' : undefined}
               className={`relative flex flex-1 flex-col items-center gap-0.5 rounded-xl py-2 text-[11px] font-semibold ${
-                selected ? 'text-amber-600 dark:text-amber-300' : 'text-muted'
+                selected ? 'text-brand-600 dark:text-brand-300' : 'text-muted'
               }`}
             >
               {selected && (
-                <motion.span layoutId="mobile-active" transition={spring} className="absolute inset-0 rounded-xl bg-amber-400/15" />
+                <motion.span layoutId="mobile-active" transition={spring} className="absolute inset-0 rounded-xl bg-brand-400/15" />
               )}
               <Icon className="relative size-5" />
               <span className="relative">{item.label}</span>
               {item.id === 'overview' && activeAlerts > 0 && (
-                <span className="absolute right-[22%] top-1 size-2 rounded-full bg-coral-500" aria-label={`${activeAlerts} active alerts`} />
+                <span className="absolute right-[22%] top-1 size-2 rounded-full bg-danger-500" aria-label={`${activeAlerts} active alerts`} />
               )}
             </button>
           );
