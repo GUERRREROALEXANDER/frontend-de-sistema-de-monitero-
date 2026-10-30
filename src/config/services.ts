@@ -10,9 +10,9 @@ export interface ServiceMeta {
 }
 
 export const SERVICES: readonly ServiceMeta[] = [
-  { id: 'inventory', label: 'Inventory', description: 'Stock & availability', database: 'inventory-db', color: '#38bdf8' },
+  { id: 'inventory', label: 'Inventory', description: 'Stock & availability', database: 'inventory-db', color: '#60a5fa' },
   { id: 'orders', label: 'Orders', description: 'Order lifecycle', database: 'orders-db', color: '#a78bfa' },
-  { id: 'payments', label: 'Payments', description: 'Charges & refunds', database: 'payments-db', color: '#fb923c' },
+  { id: 'payments', label: 'Payments', description: 'Charges & refunds', database: 'payments-db', color: '#f472b6' },
 ];
 
 export const SERVICE_BY_ID: Record<ServiceId, ServiceMeta> = Object.fromEntries(
@@ -20,7 +20,7 @@ export const SERVICE_BY_ID: Record<ServiceId, ServiceMeta> = Object.fromEntries(
 ) as Record<ServiceId, ServiceMeta>;
 
 export const RESOURCE_TARGETS: readonly { id: ResourceTarget; label: string; color: string }[] = [
-  { id: 'gateway', label: 'API Gateway', color: '#e879f9' },
+  { id: 'gateway', label: 'API Gateway', color: '#22d3ee' },
   ...SERVICES.map((s) => ({ id: s.id, label: s.label, color: s.color })),
 ];
 

@@ -38,7 +38,7 @@ function makeDot(service: ServiceId, color: string, surface: string) {
         cx={cx}
         cy={cy}
         r={isError ? 5.5 : 3}
-        fill={isError ? '#ff3d71' : color}
+        fill={isError ? '#ef4444' : color}
         stroke={surface}
         strokeWidth={isError ? 2 : 1}
       />

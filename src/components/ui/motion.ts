@@ -8,10 +8,10 @@ export const staggerContainer: Variants = {
   show: { transition: { staggerChildren: 0.06, delayChildren: 0.04 } },
 };
 
-/** Card entrance: fades in while rising slightly. */
+/** Card entrance: rises and scales in with a slight back-out overshoot. */
 export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 14, scale: 0.985 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } },
+  hidden: { opacity: 0, y: 16, scale: 0.94 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.42, ease: [0.34, 1.4, 0.64, 1] } },
 };
 
 /** Page transition between views. */

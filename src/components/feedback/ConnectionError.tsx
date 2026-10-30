@@ -52,7 +52,7 @@ export function ConnectionError({ message, onRetry, variant }: ConnectionErrorPr
         type="button"
         whileTap={{ scale: 0.96 }}
         onClick={onRetry}
-        className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-brand-400 via-pink-500 to-violet-500 px-4 py-2 text-sm font-bold text-white shadow-lg shadow-pink-500/30"
+        className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-brand-500 to-indigo-600 px-4 py-2 text-sm font-bold text-white shadow-lg shadow-brand-500/30"
       >
         <RefreshCw className="size-4" aria-hidden />
         Retry

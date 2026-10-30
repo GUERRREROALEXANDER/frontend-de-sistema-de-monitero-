@@ -19,9 +19,9 @@ interface ServiceCardProps {
 
 /** Inset glow: the card clips its overflow, so an outer shadow would be cut off. */
 const CRITICAL_GLOW = [
-  'inset 0 0 0 2px rgba(255, 61, 113, 0.75), inset 0 0 36px rgba(255, 61, 113, 0.35)',
-  'inset 0 0 0 1px rgba(255, 61, 113, 0.25), inset 0 0 12px rgba(255, 61, 113, 0.05)',
-  'inset 0 0 0 2px rgba(255, 61, 113, 0.75), inset 0 0 36px rgba(255, 61, 113, 0.35)',
+  'inset 0 0 0 2px rgba(239, 68, 68, 0.75), inset 0 0 36px rgba(239, 68, 68, 0.35)',
+  'inset 0 0 0 1px rgba(239, 68, 68, 0.25), inset 0 0 12px rgba(239, 68, 68, 0.05)',
+  'inset 0 0 0 2px rgba(239, 68, 68, 0.75), inset 0 0 36px rgba(239, 68, 68, 0.35)',
 ];
 
 export function ServiceCard({ metrics, durations, requestsPerMinute, onOpenLogs }: ServiceCardProps) {
@@ -49,7 +49,7 @@ export function ServiceCard({ metrics, durations, requestsPerMinute, onOpenLogs 
       )}
       <div
         className="pointer-events-none absolute -right-16 -top-16 size-44 rounded-full blur-3xl"
-        style={{ backgroundColor: critical ? '#ff3d71' : meta.color, opacity: 0.18 }}
+        style={{ backgroundColor: critical ? '#ef4444' : meta.color, opacity: 0.18 }}
         aria-hidden
       />
 
@@ -90,7 +90,7 @@ export function ServiceCard({ metrics, durations, requestsPerMinute, onOpenLogs 
         </div>
       </dl>
 
-      <Sparkline values={durations} color={critical ? '#ff3d71' : meta.color} className="relative mt-4 w-full" height={42} />
+      <Sparkline values={durations} color={critical ? '#ef4444' : meta.color} className="relative mt-4 w-full" height={42} />
 
       <div className="relative mt-3">
         <div className="mb-1.5 flex justify-between text-xs">
@@ -113,7 +113,7 @@ export function ServiceCard({ metrics, durations, requestsPerMinute, onOpenLogs 
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           />
           <motion.div
-            className="h-full bg-linear-to-r from-pink-500 to-danger-500"
+            className="h-full bg-linear-to-r from-orange-500 to-danger-500"
             animate={{ width: `${metrics.errorRate}%` }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           />

@@ -8,6 +8,6 @@ export interface ChartTheme {
 
 export function getChartTheme(isDark: boolean): ChartTheme {
   return isDark
-    ? { axis: '#9b95c2', grid: 'rgba(189, 183, 222, 0.08)', surface: '#151130', cursor: 'rgba(244, 114, 182, 0.45)' }
-    : { axis: '#7a74a3', grid: 'rgba(91, 33, 182, 0.08)', surface: '#ffffff', cursor: 'rgba(255, 138, 61, 0.55)' };
+    ? { axis: '#94a3b8', grid: 'rgba(148, 163, 184, 0.1)', surface: '#111a2e', cursor: 'rgba(96, 165, 250, 0.5)' }
+    : { axis: '#64748b', grid: 'rgba(15, 23, 42, 0.07)', surface: '#ffffff', cursor: 'rgba(59, 130, 246, 0.5)' };
 }

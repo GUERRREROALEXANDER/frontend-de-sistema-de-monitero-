@@ -46,7 +46,7 @@ export function TopBar(props: TopBarProps) {
         )}
 
         <span className="glass flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold" aria-live="polite">
-          <PulseDot color={connected ? '#2ee6a6' : '#ff3d71'} fast={!connected} />
+          <PulseDot color={connected ? '#10b981' : '#ef4444'} fast={!connected} />
           {connected ? 'Live' : 'Offline'}
           {lastUpdated !== null && <span className="text-muted hidden font-normal sm:inline">· {formatRelative(lastUpdated, now)}</span>}
         </span>
@@ -77,12 +77,17 @@ export function TopBar(props: TopBarProps) {
           type="button"
           onClick={onSimulateLoad}
           disabled={isSimulating}
-          whileHover={{ y: -1, boxShadow: '0 12px 28px -8px rgb(236 72 153 / 0.55)' }}
+          whileHover={{ y: -1, boxShadow: '0 12px 28px -8px rgb(59 130 246 / 0.55)' }}
           whileTap={{ scale: 0.97 }}
-          className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-brand-400 via-pink-500 to-violet-500 px-4 py-2 text-sm font-bold text-white shadow-lg shadow-pink-500/30 disabled:cursor-not-allowed disabled:opacity-75"
+          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-linear-to-r from-brand-500 to-indigo-600 px-4 py-2 text-sm font-bold text-white shadow-lg shadow-brand-500/30 disabled:cursor-not-allowed disabled:opacity-75"
         >
-          {isSimulating ? <Loader2 className="size-4 animate-spin" aria-hidden /> : <Zap className="size-4" aria-hidden />}
-          {isSimulating ? 'Simulating…' : 'Simulate Load'}
+          {/* Light sweep on hover */}
+          <span
+            className="pointer-events-none absolute inset-y-0 left-0 w-1/3 -translate-x-full -skew-x-12 bg-linear-to-r from-transparent via-white/35 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[400%]"
+            aria-hidden
+          />
+          {isSimulating ? <Loader2 className="relative size-4 animate-spin" aria-hidden /> : <Zap className="relative size-4" aria-hidden />}
+          <span className="relative">{isSimulating ? 'Simulating…' : 'Simulate Load'}</span>
         </motion.button>
       </div>
     </header>

@@ -17,7 +17,7 @@ export function RadialGauge({ value, label, warnAt, criticalAt = 95, size = 112,
   const radius = (size - STROKE) / 2;
   const circumference = 2 * Math.PI * radius;
   const clamped = Math.min(100, Math.max(0, value));
-  const color = clamped >= criticalAt ? '#ff3d71' : clamped >= warnAt ? '#fbbf24' : '#2ee6a6';
+  const color = clamped >= criticalAt ? '#ef4444' : clamped >= warnAt ? '#f59e0b' : '#10b981';
 
   return (
     <div className="flex flex-col items-center gap-1.5">

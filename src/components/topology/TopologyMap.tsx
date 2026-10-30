@@ -148,7 +148,7 @@ export function TopologyMap({ topology, selectedId, onSelect }: TopologyMapProps
               width={NODE.width}
               height={NODE.height}
               rx={18}
-              className="fill-white/85 dark:fill-[#17122e]/90"
+              className="fill-white/85 dark:fill-[#111a2e]/90"
               stroke={style.color}
               strokeOpacity={selected ? 1 : 0.55}
               strokeWidth={selected ? 2.5 : 1.5}

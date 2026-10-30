@@ -11,8 +11,8 @@ import type { Alert } from '../../types/monitoring';
 type AlertFilter = 'active' | 'all';
 
 const SEVERITY_STYLES = {
-  critical: { icon: Flame, color: '#ff3d71', chip: 'bg-danger-500/15 text-danger-700 dark:text-danger-300' },
-  warning: { icon: AlertTriangle, color: '#fbbf24', chip: 'bg-amber-400/15 text-amber-700 dark:text-amber-300' },
+  critical: { icon: Flame, color: '#ef4444', chip: 'bg-danger-500/15 text-danger-700 dark:text-danger-300' },
+  warning: { icon: AlertTriangle, color: '#f59e0b', chip: 'bg-amber-400/15 text-amber-700 dark:text-amber-300' },
 } as const;
 
 export function AlertsFeed({ alerts, className = '' }: { alerts: Alert[]; className?: string }) {

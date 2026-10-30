@@ -115,7 +115,7 @@ export function NodeDetails({ node, resources, recentLogs, onOpenLogs }: NodeDet
                     </div>
                     <div className="h-1.5 overflow-hidden rounded-full bg-night-900/8 dark:bg-white/8">
                       <motion.div
-                        className="h-full rounded-full bg-linear-to-r from-brand-400 to-pink-500"
+                        className="h-full rounded-full bg-linear-to-r from-brand-400 to-indigo-500"
                         initial={{ width: 0 }}
                         animate={{ width: `${(value.total / maxOps) * 100}%` }}
                         transition={{ duration: 0.6 }}

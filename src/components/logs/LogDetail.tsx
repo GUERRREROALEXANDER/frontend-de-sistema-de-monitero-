@@ -62,7 +62,7 @@ export function LogDetail({ log }: { log: LogEntry }) {
       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
       className="overflow-hidden"
     >
-      <div className="space-y-4 bg-violet-400/[0.05] px-5 py-4 sm:px-6">
+      <div className="space-y-4 bg-brand-500/[0.05] px-5 py-4 sm:px-6">
         <dl className="grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-5">
           {meta.map((m) => (
             <div key={m.label} className="min-w-0">

@@ -78,7 +78,7 @@ export function KpiStrip({ metrics, recentLogs, throughputTrend, latencyTrend, n
         value={totals.totalCalls}
         format={formatNumber}
         hint={`${formatNumber(totals.errorCount)} failed across all services`}
-        accent="#ff8a3d"
+        accent="#3b82f6"
       />
       <Kpi
         icon={<CheckCircle2 className="size-4" />}
@@ -86,7 +86,7 @@ export function KpiStrip({ metrics, recentLogs, throughputTrend, latencyTrend, n
         value={totals.successRate}
         format={formatPercent}
         hint={`Error rate ${formatPercent(totals.errorRate)}`}
-        accent={totals.errorRate > THRESHOLDS.criticalErrorRate ? '#ff3d71' : '#2ee6a6'}
+        accent={totals.errorRate > THRESHOLDS.criticalErrorRate ? '#ef4444' : '#10b981'}
         danger={totals.errorRate > THRESHOLDS.criticalErrorRate}
       />
       <Kpi
@@ -95,7 +95,7 @@ export function KpiStrip({ metrics, recentLogs, throughputTrend, latencyTrend, n
         value={totals.avgResponseTimeMs}
         format={formatMs}
         hint={`p95 ${formatMs(p95)} over the last ${recentLogs.length} calls`}
-        accent="#a78bfa"
+        accent="#f59e0b"
         trend={latencyTrend}
       />
       <Kpi
